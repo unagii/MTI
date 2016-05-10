@@ -3,14 +3,14 @@ package lab3;
 public class PaymentAnnuity extends Payment {
 
 	@Override
-	public double payment(double Кр, int i,double т,double ст) {
+	public double payment(double Kr, int i,int T,double St) {
 		// TODO Auto-generated method stub
-		double Пл=0;
+		double Pl=0;
 		
-		ст=ст/12/100;
-		Пл=Кр*ст/(1-1/Math.pow(1+ст,т));
+		St=St/12/100;
+		Pl=Kr*St/(1-1/Math.pow(1+St,T));
 		
-		return Пл;
+		return Pl;
 	}
 
 }

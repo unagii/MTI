@@ -1,38 +1,32 @@
 package lab3;
 
+//ĞºĞ¾Ğ¼ĞµĞ½Ñ‚Ğ°Ñ€Ğ¸Ğ¹.
+
 public class Credit  {
 
-	private double ò=24;
-	private double ñò=19;
-
-
-	public Credit(){
-		
-	}
+	private int T=24;
+	private double St=19;
+	private	double Kr;
+	
+	private Payment payment; 
+	private enum PaymentType {DIFFERENTIATED, ANNUITY}
 	
 	
-	public double paymentDifferentiated (double Êğ ,int i){
-		double Ïë=0;
+	public Credit(double credisSum,int months,double rate, String type){
+		Kr=credisSum;	//ÑÑƒĞ¼Ğ¼Ğ° ĞºÑ€ĞµĞ´Ğ¸Ñ‚Ğ°
+		T=months;		//ĞºĞ¾Ğ»Ğ¸Ñ‡ĞµÑÑ‚Ğ²Ğ¾ Ğ¿ĞµÑ€Ğ¸Ğ¾Ğ´Ğ¾Ğ² Ğ¾Ğ¿Ğ»Ğ°Ñ‚Ñ‹
+		St=rate;		//Ğ¿Ñ€Ğ¾Ñ†ĞµĞ½Ñ‚Ğ½Ğ°Ñ ÑÑ‚Ğ°Ğ²ĞºĞ°, Ğ½Ğ°Ñ‡Ğ¸ÑĞ»ÑĞµĞ¼Ğ°Ñ Ğ½Ğ° Ğ·Ğ°Ğ´Ğ¾Ğ»Ğ¶ĞµĞ½Ğ½Ğ¾ÑÑ‚ÑŒ Ğ·Ğ° Ğ¿ĞµÑ€Ğ¸Ğ¾Ğ´
+				
 		
-		ñò=ñò/12/100;
-		Ïë=Êğ/ò+Êğ*(ò-i+1)*ñò/ò;
-		
-		return Ïë;
+		if (PaymentType.ANNUITY == PaymentType.valueOf(type)) payment = new PaymentAnnuity();
+		if (PaymentType.DIFFERENTIATED == PaymentType.valueOf(type)) payment = new PaymentDifferentiated();
 	}
-
-
-	double paymentAnnuity(double Êğ) {
-		double Ïë=0;
+	
+	public  double payment(int i){
 		
-		ñò=ñò/12/100;
-		Ïë=Êğ*ñò/(1-1/Math.pow(1+ñò,ò));
 		
-		return Ïë;
-	}
-    
-	public  double payment(double Êğ, int i,boolean type){
-		if (type) return new PaymentDifferentiated().payment(Êğ, i, ò, ñò);
-		else return new PaymentAnnuity().payment(Êğ, i, ò, ñò);
+		return payment.payment(Kr, i, T, St);
+		
 	}
 
 

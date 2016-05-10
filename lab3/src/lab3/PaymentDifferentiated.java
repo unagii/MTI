@@ -3,15 +3,15 @@ package lab3;
 public class PaymentDifferentiated extends Payment {
 
 	@Override
-	public double payment(double Кр, int i,double т,double ст) {
+	public double payment(double Kr, int i,int T,double St) {
 		// TODO Auto-generated method stub
 	
-		double Пл=0;
+		double Pl=0;
 		
-		ст=ст/12/100;
-		Пл=Кр/т+Кр*(т-i+1)*ст/т;
+		St=St/12/100;
+		Pl=Kr/T+Kr*(T-i+1)*St/T;
 		
-		return Пл;
+		return Pl;
 
 	}
 
