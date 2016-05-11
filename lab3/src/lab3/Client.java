@@ -7,7 +7,7 @@ public class Client {
 
 	Credit credit;
 	
-	public void Client(String firstName_,String lastName_) {
+	public  Client(String firstName_,String lastName_) {
 		firstName=firstName_;
 		lastName=lastName_;
 		
@@ -23,6 +23,10 @@ public class Client {
 	public double getPaymentSum(int month) {
 		
 		return credit.payment(month);
+	}
+
+	public String getName(){
+		return firstName+" "+lastName;	
 	}
 	
 }
