@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script src="EMI/view/table.js"></script>
+
+
+    <script src="EMI/flags.js"></script>
+    <script src="EMI/decode.js"></script>
+    <script src="EMI/instruction.js"></script>
+    <script src="EMI/dictData.js"></script>
+
+    <script src="EMI/register.js"></script>
+    <script src="EMI/emu.js"></script>
+    <script src="EMI/operand.js"></script>
+
+    <script src="EMI/view/memView.js"></script>
+
+
+
+    <script src="EMI/view/regView.js"></script>
+    <script src="EMI/view/stackView.js"></script>
+
+    <script src="EMI/view/buttonBar.js"></script>
+    <script src="EMI/view/asmView.js"></script>
+    <script src="EMI/view/flagsView.js"></script>
+
+
+
+    <script src="EMI/cpu8086.js"></script>
+
+
+
+
+
+
+
+
+    <title>Bootstrap 101 Template</title>
+
+    <!-- Bootstrap -->
+    <!--link href="css/bootstrap.min.css" rel="stylesheet"-->
+
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <link href="css/bootstrap-slider.min.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+
+
+
+
+    <![endif]-->
+</head>
+<body>
+
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#">EM i8086</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li>
+                <div class="btn-group" >
+                    <input id="LoadFileBTN" type="file" class="btn btn-default btn-lg">
+                </div>
+
+                <div class="btn-group" >
+                        <button id="ResetBTN" type="button" class="btn btn-default btn-lg glyphicon glyphicon-refresh"></button>
+                        <button id="BackBTN" type="button" class="btn btn-default btn-lg glyphicon glyphicon-step-backward"></button>
+                    <button id="NextBTN" type="button" class="btn btn-default btn-lg glyphicon glyphicon-step-forward"></button>
+                    <button id="PauseBTN" type="button" class="btn btn-default btn-lg glyphicon glyphicon glyphicon-pause"></button>
+                    <button id="RunBTN" type="button" class="btn btn-default btn-lg glyphicon glyphicon-play"></button>
+
+                </div>
+            </li>
+
+            <li class="dropdown">
+                <a id="drop1" href="#" class="dropdown-toggle" data-toggle="dropdown">
+                    Тесты
+                    <span class="caret"></span>
+                </a>
+                <ul id="testMenu" class="dropdown-menu">          </ul>
+            </li>
+            <li> <a href="#">Задержка</a></li>
+            <li>
+
+                <a>
+                    <input id="sleep" type="text" data-slider-ticks-labels='["short", "medium", "long"]'>
+                </a>
+            </li>
+        </ul>
+
+
+
+        <ul class="nav navbar-nav navbar-right">
+        </ul>
+
+
+
+    </div>
+</nav>
+
+<div class="row">
+
+    <div class="col-md-1">
+        <div  style=" height:450px;">
+            <table id="regView" class="table table-bordered table-hover text-center" ></table>
+
+        </div>
+    </div>
+
+    <div class="col-md-5">
+        <pre style=" height:380px;  " >
+            <table id="memView" class="table table-hover table-condensed  table-striped" valign="top" ></table>
+        </pre>
+
+        <table id="flagsView" class="table  table-hover  table-striped text-center " valign="top" ></table>
+
+    </div>
+
+    <div class="col-md-3" >
+
+             <table  class="table table-hover   table-fixed" valign="top" >
+                <thead id="asmViewHeader">
+                    <tr>
+                        <th>Адрес</th> <th>HEX</th> <th>Код</th>
+                    </tr>
+                </thead>
+                <tbody id="asmView"   height=420px text-center ></tbody>
+            </table>
+
+    </div>
+
+    <div class="col-md-2">
+        <pre style=" height:450px; ">
+            <table id="stackView" class="table table-hover  table-striped" valign="top" ></table>
+        </pre>
+    </div>
+</div>
+
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <!-- Include all compiled plugins (below), or include individual files as needed -->
+        <script src="js/bootstrap.min.js"></script>
+
+
+<script src="js/bootstrap-slider.js"></script>
+<!--script src="js/bootstrap-slider.min.js"></script-->
+
+
+
+<script src="index.js"></script>
+
+
+<script src="EMI/view/ui.js"></script>
+
+
+
+    </body>
+</html>
